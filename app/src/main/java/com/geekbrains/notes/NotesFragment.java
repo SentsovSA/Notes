@@ -25,7 +25,17 @@ public class NotesFragment extends Fragment {
     private static String noteText;
     private Button saveBtn;
     private static long time;
+    private NotesInfo notesInfo;
+    public static final String ARG_NOTE = "note";
 
+    public static NotesFragment newInstance(NotesInfo notesInfo) {
+        NotesFragment f = new NotesFragment();
+
+        Bundle args = new Bundle();
+        args.putParcelable(ARG_NOTE, notesInfo);
+        f.setArguments(args);
+        return f;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
