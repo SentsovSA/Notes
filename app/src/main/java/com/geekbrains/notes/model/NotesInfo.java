@@ -1,15 +1,17 @@
-package com.geekbrains.notes;
+package com.geekbrains.notes.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NotesInfo implements Parcelable {
-    private String noteName;
-    private int noteNumber;
+    private final String noteName;
+    private final int noteNumber;
+    private String description;
 
-    public NotesInfo(int noteNumber, String noteName){
+    public NotesInfo(int noteNumber, String noteName, String description){
         this.noteNumber = noteNumber;
         this.noteName = noteName;
+        this.description = description;
     }
 
     protected NotesInfo(Parcel in) {
@@ -46,5 +48,9 @@ public class NotesInfo implements Parcelable {
 
     public int getNoteNumber() {
         return noteNumber;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
