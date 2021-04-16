@@ -5,24 +5,20 @@ import android.os.Parcelable;
 
 public class NotesInfo implements Parcelable {
     private final String noteName;
-    private final int noteNumber;
     private String description;
 
-    public NotesInfo(int noteNumber, String noteName, String description){
-        this.noteNumber = noteNumber;
+    public NotesInfo(String noteName, String description){
         this.noteName = noteName;
         this.description = description;
     }
 
     protected NotesInfo(Parcel in) {
-        noteName =in.readString();
-        noteNumber = in.readInt();
+        noteName = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(getNoteName());
-        dest.writeInt(getNoteNumber());
     }
 
     @Override
@@ -44,10 +40,6 @@ public class NotesInfo implements Parcelable {
 
     public String getNoteName() {
         return noteName;
-    }
-
-    public int getNoteNumber() {
-        return noteNumber;
     }
 
     public String getDescription() {

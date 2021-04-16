@@ -17,7 +17,6 @@ import java.util.List;
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
 
     private final List<NotesInfo> dataSource;
-    private Context context;
 
     public NotesAdapter(List<NotesInfo> dataSource) {
         this.dataSource = dataSource;
@@ -26,7 +25,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        this.context = parent.getContext();
+        Context context = parent.getContext();
         return new ViewHolder(
                 LayoutInflater.from(context).inflate(
                         R.layout.item_list, parent, false
@@ -46,7 +45,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
         return dataSource == null ? 0 :dataSource.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
         TextView title, description;
         AppCompatImageView imageView;
 

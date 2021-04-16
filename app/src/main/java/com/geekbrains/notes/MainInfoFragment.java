@@ -26,6 +26,11 @@ public class MainInfoFragment extends Fragment {
     public static final String CURRENT_NOTE = "CurrentNote";
     private NotesAdapter adapter;
 
+    public static MainInfoFragment newInstance() {
+        return new MainInfoFragment();
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,7 +67,7 @@ public class MainInfoFragment extends Fragment {
                 == Configuration.ORIENTATION_LANDSCAPE;
 
         if (isLandscape) {
-            showLandNote(currentNote);
+            showNote(currentNote);
         }
     }
 
@@ -90,13 +95,4 @@ public class MainInfoFragment extends Fragment {
         intent.putExtra(NotesFragment.ARG_NOTE, currentNote);
         startActivity(intent);
     }
-
-        /*if(NotesFragment.getNoteNameText() == null){
-            String text = "Новая заметка" + NotesFragment.getTime();
-            textView.setText(text);
-        } else {
-            String text = NotesFragment.getNoteNameText() + NotesFragment.getTime();
-            textView.setText(text);
-        }
-        layout.addView(textView);*/
 }

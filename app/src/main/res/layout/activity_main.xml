@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/noteName"
-        android:name="com.geekbrains.notes.MainInfoFragment"
+    <FrameLayout
+        android:id="@+id/fragment_container_note_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

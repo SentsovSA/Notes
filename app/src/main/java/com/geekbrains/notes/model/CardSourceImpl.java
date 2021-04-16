@@ -20,6 +20,9 @@ public class CardSourceImpl implements CardsSource {
     public List<NotesInfo> getData() {
         String[] titles = resources.getStringArray(R.array.noteNames);
         String[] descriptions = resources.getStringArray(R.array.note_text);
+        for (int i = 0; i < descriptions.length; i++) {
+            dataSource.add(new NotesInfo(descriptions[i], titles[i]));
+        }
         return dataSource;
     }
 }
