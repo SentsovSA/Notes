@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="noteNames">
+        <item>Новая заметка</item>
+        <item>Новая заметка1</item>
+        <item>Новая заметка2</item>
+        <item>Новая заметка3</item>
+        <item>Новая заметка4</item>
+    </string-array>
+
+    <integer-array name="note_text">
+        <item>@string/type_note_name</item>
+        <item>@string/type_note_name</item>
+        <item>@string/type_note_name</item>
+        <item>@string/type_note_name</item>
+        <item>@string/type_note_name</item>
+    </integer-array>
+</resources>

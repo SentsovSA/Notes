@@ -7,15 +7,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.SystemClock;
-import android.text.method.TimeKeyListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.security.Timestamp;
-import java.sql.Time;
+import com.geekbrains.notes.model.NotesInfo;
+
 
 public class NotesFragment extends Fragment {
 
@@ -25,7 +24,16 @@ public class NotesFragment extends Fragment {
     private static String noteText;
     private Button saveBtn;
     private static long time;
+    public static final String ARG_NOTE = "note";
 
+    public static NotesFragment newInstance(NotesInfo notesInfo) {
+        NotesFragment f = new NotesFragment();
+
+        Bundle args = new Bundle();
+        args.putParcelable(ARG_NOTE, notesInfo);
+        f.setArguments(args);
+        return f;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
