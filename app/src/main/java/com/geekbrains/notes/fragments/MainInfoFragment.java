@@ -1,4 +1,4 @@
-package com.geekbrains.notes;
+package com.geekbrains.notes.fragments;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -16,18 +16,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.geekbrains.notes.NoteActivity;
+import com.geekbrains.notes.model.NotesAdapter;
+import com.geekbrains.notes.R;
 import com.geekbrains.notes.model.CardSourceImpl;
 import com.geekbrains.notes.model.NotesInfo;
 
 public class MainInfoFragment extends Fragment {
 
-    private NotesInfo currentNote;
+    private static NotesInfo currentNote;
     private boolean isLandscape;
     public static final String CURRENT_NOTE = "CurrentNote";
-    private NotesAdapter adapter;
+
+    public MainInfoFragment(NotesInfo currentNote) {
+        MainInfoFragment.currentNote = currentNote;
+    }
+
+    public MainInfoFragment() {
+    }
 
     public static MainInfoFragment newInstance() {
-        return new MainInfoFragment();
+        return new MainInfoFragment(currentNote);
     }
 
 
@@ -49,7 +58,7 @@ public class MainInfoFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new NotesAdapter(new CardSourceImpl(getResources()).getData());
+        NotesAdapter adapter = new NotesAdapter(new CardSourceImpl(getResources()).getData());
         recyclerView.setAdapter(adapter);
     }
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
+import com.geekbrains.notes.fragments.NotesFragment;
+
 public class NoteActivity extends AppCompatActivity {
 
     @Override

@@ -1,4 +1,4 @@
-package com.geekbrains.notes;
+package com.geekbrains.notes.model;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.geekbrains.notes.model.NotesInfo;
+import com.geekbrains.notes.R;
 
 import java.util.List;
 
