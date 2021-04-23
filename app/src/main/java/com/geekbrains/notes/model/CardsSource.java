@@ -3,5 +3,8 @@ package com.geekbrains.notes.model;
 import java.util.List;
 
 public interface CardsSource {
-    List<NotesInfo> getData();
+    int size();
+    NotesInfo getCardData(int position);
+    CardsSource init(CardsSourceResponse cardsSourceResponse);
+    void addCardData(NotesInfo notesInfo);
 }

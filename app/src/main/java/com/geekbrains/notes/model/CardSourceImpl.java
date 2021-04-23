@@ -17,12 +17,25 @@ public class CardSourceImpl implements CardsSource {
     }
 
     @Override
-    public List<NotesInfo> getData() {
+    public int size() {
+        return dataSource.size();
+    }
+
+    @Override
+    public NotesInfo getCardData(int position) {
+        return dataSource.get(position);
+    }
+
+    @Override
+    public CardsSource init(CardsSourceResponse cardsSourceResponse) {
         String[] titles = resources.getStringArray(R.array.noteNames);
         String[] descriptions = resources.getStringArray(R.array.note_text);
         for (int i = 0; i < descriptions.length; i++) {
             dataSource.add(new NotesInfo(descriptions[i], titles[i]));
         }
-        return dataSource;
+        if (cardsSourceResponse != null){
+            cardsSourceResponse.initialized(this);
+        }
+        return this;
     }
 }

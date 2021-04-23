@@ -93,7 +93,7 @@ public class MainInfoFragment extends Fragment {
 
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.note, detail);
+        fragmentTransaction.replace(R.id.nav_host_fragment, detail);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
     }
@@ -103,5 +103,9 @@ public class MainInfoFragment extends Fragment {
         intent.setClass(getActivity(), NoteActivity.class);
         intent.putExtra(NotesFragment.ARG_NOTE, currentNote);
         startActivity(intent);
+    }
+
+    private void openNote(){
+
     }
 }

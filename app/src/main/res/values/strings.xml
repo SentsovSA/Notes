@@ -19,4 +19,6 @@
     <string name="nav_header_desc">Как-то так</string>
     <string name="nav_header_title">SentsovSA</string>
     <string name="about">About</string>
+    <string name="add">add</string>
+    <string name="home">Home</string>
 </resources>

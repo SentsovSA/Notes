@@ -7,14 +7,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.geekbrains.notes.R;
+import com.geekbrains.notes.fragments.Navigation;
 
 import java.util.List;
 
-public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
 
     private final List<NotesInfo> dataSource;
 
@@ -42,18 +42,19 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return dataSource == null ? 0 :dataSource.size();
+        return dataSource == null ? 0 : dataSource.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView title, description;
-        AppCompatImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             description = itemView.findViewById(R.id.description);
-            imageView = itemView.findViewById(R.id.imageView);
+            title.setOnClickListener(v -> {
+
+            });
         }
     }
 }
