@@ -1,21 +1,25 @@
-package com.geekbrains.notes;
+package com.geekbrains.notes.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NotesInfo implements Parcelable {
-    private String noteName;
+    private String id;
+    private final String noteName;
+    private String description;
 
-    public NotesInfo(String noteName){
+    public NotesInfo(String noteName, String description){
         this.noteName = noteName;
+        this.description = description;
     }
 
     protected NotesInfo(Parcel in) {
-
+        noteName = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(getNoteName());
     }
 
     @Override
@@ -37,5 +41,17 @@ public class NotesInfo implements Parcelable {
 
     public String getNoteName() {
         return noteName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
